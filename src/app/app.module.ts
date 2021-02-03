@@ -11,6 +11,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {HeroSearchComponent} from './hero-search/hero-search.component';
+import {SpyDirective} from './spy.directive';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import {HeroSearchComponent} from './hero-search/hero-search.component';
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    SpyDirective
   ],
   bootstrap: [AppComponent]
 })
