@@ -1,25 +1,26 @@
-import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
-
-import {AppComponent} from './app.component';
-import {DashboardComponent} from './dashboard/dashboard.component';
-import {HeroDetailComponent} from './hero-detail/hero-detail.component';
-import {HeroesComponent} from './heroes/heroes.component';
-import {MessagesComponent} from './messages/messages.component';
-import {HttpClientModule} from '@angular/common/http';
-import {AppRoutingModule} from './app-routing.module';
-import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
-import {HeroSearchComponent} from './hero-search/hero-search.component';
-import {SpyDirective} from './spy.directive';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+import { AdBannerComponent } from './ad-banner.component';
+import { HeroProfileComponent } from './hero-profile.component';
+import { AdDirective } from './ad.directive';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeroesComponent } from './heroes/heroes.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { MessagesComponent } from './messages/messages.component';
+import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { SpyDirective } from './spy.directive';
+import { HeroItemComponent } from './hero-item/hero-item.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule,
-    HttpClientInMemoryWebApiModule
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
@@ -28,7 +29,11 @@ import {SpyDirective} from './spy.directive';
     HeroDetailComponent,
     MessagesComponent,
     HeroSearchComponent,
-    SpyDirective
+    SpyDirective,
+    AdDirective,
+    HeroProfileComponent,
+    AdBannerComponent,
+    HeroItemComponent
   ],
   bootstrap: [AppComponent]
 })
