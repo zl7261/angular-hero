@@ -18,11 +18,20 @@ let dataSet = [
 ];
 
 app.get("/heroes", (req, res) => {
-  res.json(dataSet);
+  const name = req.query.name
+  let resp
+  if (!name) {
+    resp = dataSet
+  } else {
+    resp = dataSet.filter(item => {
+      return item.name.toLowerCase().indexOf(name.toLowerCase()) > -1
+    })
+  }
+  res.json(resp);
 });
 
 app.get("/heroes/:id", (req, res) => {
   res.json(dataSet.find(item => item.id === +req.params.id));
 });
 
-app.listen(8000, "localhost", () => console.log("服务已经启动"))
+app.listen(8000, "localhost", () => console.log("server start"))

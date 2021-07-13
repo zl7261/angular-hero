@@ -1,11 +1,22 @@
-<h1>{{title}}</h1>
-<nav>
-  <a routerLink="/dashboard">Dashboard</a>
-  <a routerLink="/heroes">Heroes</a>
-</nav>
-<router-outlet></router-outlet>
-<div>
-  <app-ad-banner [ads]="ads"></app-ad-banner>
-</div>
+<ng-container *ngIf="!router.url.includes('/pipe')">
 
-<app-messages></app-messages>
+  <h1>{{title}}</h1>
+
+  <label>
+    <input #input value="Message">
+  </label>
+  <button (click)="popup.showAsComponent(input.value)">Show as component</button>
+  <button (click)="popup.showAsElement(input.value)">Show as element</button>
+  <nav>
+    <a routerLink="/dashboard">Dashboard</a>
+    <a routerLink="/heroes">Heroes</a>
+  </nav>
+</ng-container>
+<router-outlet></router-outlet>
+<ng-container *ngIf="!router.url.includes('/pipe')">
+  <div>
+    <app-ad-banner [ads]="ads"></app-ad-banner>
+  </div>
+
+  <app-messages></app-messages>
+</ng-container>
