@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {AdBannerComponent} from './ad-banner.component';
 import {HeroProfileComponent} from './hero-profile.component';
@@ -19,6 +19,10 @@ import {HeroBirthdayComponent} from './pipe/component/hero-birthday.component';
 import {HeroPipeComponent} from './pipe';
 import {HeroBirthdayToggleComponent} from './pipe/component/hero-birthday-toggle.component';
 import {ExponentialStrengthPipe} from './pipe/pipe/exponential-strength.pipe';
+import {CommonPipeComponent} from './common-pipe/common-pipe.component';
+import {JsonPipe, KeyValuePipe} from '@angular/common';
+import {LocaleService} from './locale.service';
+import { TranslateComponent } from './translate/translate.component';
 
 @NgModule({
   imports: [
@@ -43,8 +47,16 @@ import {ExponentialStrengthPipe} from './pipe/pipe/exponential-strength.pipe';
     HeroBirthdayComponent,
     HeroPipeComponent,
     HeroBirthdayToggleComponent,
-    ExponentialStrengthPipe
+    ExponentialStrengthPipe,
+    CommonPipeComponent,
+    TranslateComponent
   ],
+  providers: [KeyValuePipe, JsonPipe,
+    {
+      provide: LOCALE_ID,
+      deps: [LocaleService],
+      useFactory: (service: { locale: string; }) => service.locale
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule {

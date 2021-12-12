@@ -42,7 +42,6 @@ export class AdBannerComponent implements OnInit, OnDestroy, AfterViewInit {
     }
     this.currentAdIndex = (this.currentAdIndex + 1) % this.ads.length;
     const adItem = this.ads[this.currentAdIndex];
-    console.log(adItem);
     if (!adItem) {
       return;
     }
@@ -57,8 +56,5 @@ export class AdBannerComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   getAds() {
-    this.interval = setInterval(() => {
-      this.loadComponent();
-    }, 1000);
   }
 }

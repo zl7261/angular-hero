@@ -5,13 +5,17 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {HeroesComponent} from './heroes/heroes.component';
 import {HeroDetailComponent} from './hero-detail/hero-detail.component';
 import {HeroPipeComponent} from './pipe';
+import {CommonPipeComponent} from './common-pipe/common-pipe.component';
+import {TranslateComponent} from './translate/translate.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'detail/:id', component: HeroDetailComponent},
   {path: 'heroes', component: HeroesComponent},
-  {path: 'pipe', component: HeroPipeComponent}
+  {path: 'pipe', component: HeroPipeComponent},
+  {path: 'common-pipe', component: CommonPipeComponent},
+  {path: 'translate', component: TranslateComponent}
 ];
 
 @NgModule({

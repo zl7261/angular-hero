@@ -1,0 +1,15 @@
+    <p>Object</p>
+    <div *ngFor="let item of object | keyvalue">
+      {{item.key}}:{{item.value}}
+    </div>
+    <p>Map</p>
+    <div *ngFor="let item of map | keyvalue">
+      {{item.key}}:{{item.value}}
+    </div>
+
+    <div>
+      <p>Without JSON pipe:</p>
+      <pre>{{object}}</pre>
+      <p>With JSON pipe:</p>
+      <pre>{{object | json}}</pre>
+    </div>

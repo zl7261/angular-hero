@@ -4,6 +4,12 @@
   "newProjectRoot": "projects",
   "projects": {
     "angular-hero": {
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "fr": "src/locale/messages.fr.xlf"
+        }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -39,6 +45,11 @@
             "scripts": []
           },
           "configurations": {
+            "fr": {
+              "localize": [
+                "fr"
+              ]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -76,6 +87,9 @@
           "configurations": {
             "production": {
               "browserTarget": "angular-hero:build:production"
+            },
+            "fr": {
+              "browserTarget": "angular-hero:build:fr"
             }
           }
         },
